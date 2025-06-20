@@ -4,7 +4,7 @@ import '../styles/global.css';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     password: '',
   });
@@ -18,13 +18,15 @@ const Signup = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log(formData);
     e.preventDefault();
     try {
       const response = await fetch("http://localhost:3000/api/auth/signup", {
         method: "POST",
-        headers: {
+        headers: { 
           "Content-Type": "application/json",
         },
+        
         body: JSON.stringify(formData),
       });
       const data = await response.json();
@@ -33,7 +35,8 @@ const Signup = () => {
         navigate('/login');
       }
     } catch (error) {
-      console.error('Signup error:', error);
+      console.error(error );
+
     }
   };
 
@@ -47,8 +50,8 @@ const Signup = () => {
             <input
               type="text"
               id="name"
-              name="name"
-              value={formData.name}
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
               className="form-input"
               required
@@ -81,7 +84,7 @@ const Signup = () => {
               autoComplete="new-password"
             />
           </div>
-          <button type="submit" className="btn btn-primary" onClick={(e)=>{e.preventDefault(); navigate('/login')}}>
+          <button type="submit" className="btn btn-primary" onClick={(e)=>{handleSubmit(e)}}>
             Sign Up
           </button>
           <div className="auth-links">

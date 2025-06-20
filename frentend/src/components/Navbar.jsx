@@ -17,7 +17,7 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { useNavigate } from 'react-router-dom';
 
 const pages = ['Home', 'Chat', 'About'];
-const settings = ['Profile', 'Settings', 'Logout'];
+//const settings = ['Profile', 'Settings', 'Logout'];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -238,20 +238,21 @@ const Navbar = () => {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar 
-                  alt="User" 
+                  alt="Yash" 
                   src="../yash.jpg"
                   sx={{
                     border: '2px solid #4158D0',
-                    boxShadow: '0 0 10px rgba(65, 88, 208, 0.3)',
+                    boxShadow: '0 0 10px rgba(20, 20, 23, 0.3)',
+                    backgroundColor: 'rgba(26, 25, 25, 0.95)',
                   }}
                 />
               </IconButton>
             </Tooltip>
-            <Menu
+            {/*<Menu
               sx={{ 
                 mt: '45px',
                 '& .MuiPaper-root': {
-                  background: 'rgba(255, 255, 255, 0.95)',
+                  background: 'rgba(26, 25, 25, 0.95)',
                   backdropFilter: 'blur(12px)',
                   border: '1px solid rgba(255, 255, 255, 0.3)',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
@@ -283,8 +284,8 @@ const Navbar = () => {
                 >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
-            </Menu>
+              ))*/}
+          {/*</Menu>*/}
           </Box>
         </Toolbar>
       </Container>

@@ -26,13 +26,13 @@ const Login = () => {
         },
         body: JSON.stringify(formData),
       });
-      const data = await response.json();
+      const data=await response.json();
       console.log(data);
       if (response.ok) {
         navigate('/');
       }
-    } catch (error) {
-      console.error('Login error:', error);
+    } catch (err) {
+      console.error('Login error:', err);
     }
   };
 
@@ -67,13 +67,13 @@ const Login = () => {
               autoComplete="current-password"
             />
           </div>
-          <button type="submit" className="btn btn-primary" onClick={(e)=>{e.preventDefault(); navigate('/chat')}}>
+          <button type="submit" className="btn btn-primary">
             Login
           </button>
           <div className="auth-links">
             <button
               type="button"
-              onClick={() => navigate('/login')}
+              onClick={() => navigate('/signup')}
               className="link-button"
             >
               Don't have an account? Sign Up

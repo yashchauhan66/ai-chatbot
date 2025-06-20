@@ -31,7 +31,7 @@ const Chat = () => {
   const MODEL_NAME = "Gemini 1.5 Flash";
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({ behavior: "instant" });
   };
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const Chat = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
                 <Chip
                   icon={<AutoAwesomeIcon />}
-                  label={MODEL_NAME}
+                  label={"Yash 1.5 Flash"}
                   size="small"
                   sx={{
                     background: 'rgba(255, 255, 255, 0.2)',
@@ -190,7 +190,7 @@ const Chat = () => {
             >
               <SmartToyIcon sx={{ fontSize: 48, color: '#4158D0' }} />
               <Typography variant="h6" color="text.secondary" align="center">
-                Start a conversation with {MODEL_NAME}
+                Start a conversation with {"Yash 1.5 Flash"}
               </Typography>
               <Typography variant="body2" color="text.secondary" align="center">
                 Ask me anything! I'm here to help.
@@ -312,7 +312,7 @@ const Chat = () => {
             <TextField
               fullWidth
               variant="outlined"
-              placeholder={`Ask ${MODEL_NAME} anything...`}
+              placeholder={`Ask Yash 1.5 Flash anything...`}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
